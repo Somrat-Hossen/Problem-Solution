@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-   //freopen("int.txt","r",stdin);
+   freopen("int.txt","r",stdin);
    queue<int>que;
 
    int u,v,edg,ver,src;//node means edge
@@ -26,17 +26,33 @@ int main()
     vec[v].push_back(u);
   }
 
-  for(int i=1;i<=ver;i++)
+  cout<<"Enter  src vertix :"<<endl;
+  cin>>src;
+  que.push(src);
+  cout<<"Traversal are: ";
+
+  while(!que.empty())
   {
-    cout<<i<<" : ";
-    for(int j=0;j<(int)vec[i].size();j++)
+    int frnt=que.front(),s;
+    if(visited[frnt]!=1)
     {
-    cout<<vec[i][j]<<" ";
+     visited[frnt]=1; cout<<frnt<<" ";
+     for(int i=0;i<vec[frnt].size();i++)
+     {
+        s=vec[frnt][i];
+         if(visited[s]!=1)
+         {
+           que.push(s);
+         }
+     }
     }
-    cout<<endl;
-  }
-  
+    que.pop();
+   }
+
+cout<<endl;
     return 0;
 }
+
+
 
 
