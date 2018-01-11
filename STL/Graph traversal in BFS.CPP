@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-   freopen("int.txt","r",stdin);
+   //freopen("int.txt","r",stdin);
    queue<int>que;
 
    int u,v,edg,ver,src;//node means edge
