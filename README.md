@@ -1,2 +1,0 @@
-# Problem-Solution
-Programming(Code)
