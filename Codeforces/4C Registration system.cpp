@@ -15,7 +15,7 @@ int main()
   while(n--)
   {
       cin>>str;
-     if(mp[str]==0)
+     if(mp[str]==0)//mp[str] means index,first contains 0
      {
        puts("OK");
        mp[str]++;
