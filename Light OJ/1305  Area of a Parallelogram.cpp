@@ -12,8 +12,8 @@ int main()
            scanf("%d%d%d%d%d%d",&Ax,&Ay,&Bx,&By,&Cx,&Cy);
            Dx=(Ax+Cx)-Bx;
            Dy=(Ay+Cy)-By;
-           A=sqrt((Ax-Bx)*(Ax-Bx)+(Ay-By)*(Ay-By));
-           B=sqrt((Bx-Cx)*(Bx-Cx)+(By-Cy)*(By-Cy));
+          //A=sqrt((Ax-Bx)*(Ax-Bx)+(Ay-By)*(Ay-By));
+          // B=sqrt((Bx-Cx)*(Bx-Cx)+(By-Cy)*(By-Cy));
           // cout<<A*B;
 
 
