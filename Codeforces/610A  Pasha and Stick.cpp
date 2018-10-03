@@ -9,21 +9,16 @@ using namespace std;
 
 int main()
  {
-     ull n,a,b,res=0,m,c,sum=0;
-     cin>>n>>m;
-     sum=n+m;
+     ull n,a,b,res;
+     cin>>n;
+     if(n&1 || n<6){ puts("0"); return 0; }
 
+    n/=2;
+    a=n/2+1;b=n-1;
 
-         cin>>a>>b>>c;
-         res+=a*2+b*2+c*3;
+    res=(b-a)+1;
 
-
-   //  cout<<res<<" "<<sum<<endl;
-
-    if((res-sum)>0) cout<<(res-sum)<<endl;
-
-    else cout<<0<<endl;
+    cout<<res<<endl;
 
     return 0;
   }
-
