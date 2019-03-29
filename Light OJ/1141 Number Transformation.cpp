@@ -84,10 +84,10 @@ int BFS(int src, int des)
          int ch=factor[p][i];
          int tmp=ch+p;
 
-         if(tmp<=des && (vis[tmp]==0))
+         if(tmp<=des && (vis[tmp]==0)) /// Since we didnot compute the dis yet ,so tmp<=des.
          {
             que.push(tmp);
-            dis[tmp]= dis[p]+1;
+            dis[tmp]= dis[p]+1;  ///dis will be added with its parrent 
             vis[tmp]=1;
 
          }
