@@ -36,7 +36,7 @@ int main()
        area_bdec=area_abc-area_ade;   ///triangle of bdec
        tmp=area_ade/area_bdec;
 
-        if(tmp==mid) break;
+        if(tmp==Ratio ) break;
 
         else if(tmp>Ratio) ub=mid;
 
@@ -49,4 +49,3 @@ int main()
 
   return 0;
 }
-
