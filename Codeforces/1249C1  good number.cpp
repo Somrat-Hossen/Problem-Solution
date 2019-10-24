@@ -9,18 +9,18 @@ void Solve(ll num)
 {
     ll cnt=0,tmp=num,res=1;
     vector<ll>vec;
-    vec.push_back(1);
+    vec.push_back(1); ///push all the pow(3,i),i=1,2,3....cnt
 
     while(tmp)
     {
        cnt++;
        tmp/=3;
-       res+= pow(3,cnt);
+       res+= pow(3,cnt); ///res contains the sum of the pow(3,i),i=1,2,3....cnt
        vec.push_back(pow(3,cnt));
     }
 
     res+=pow(3,cnt+1);
-    vec.push_back(pow(3,cnt+1));
+    vec.push_back(pow(3,cnt+1));///for more security 
 
     int len=vec.size();
 
