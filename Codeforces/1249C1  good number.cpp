@@ -5,46 +5,33 @@
 
 using namespace std;
 
-bool ter[2*10005];
-
-
-void Conversion()
+void Solve(ll num)
 {
-   for(int i=1;i<=mx-5;i++)
-   {
-      int num=i;
-      ll base=1,ternary=0,rem;
+    ll cnt=0,tmp=num,res=1;
+    vector<ll>vec;
+    vec.push_back(1);
 
-          while(num > 0)
-          {
-              rem = num % 3;
-              ternary = ternary + rem * base;
-              num /= 3;
-              base = base * 10;
-          }
-
-         ll tmp,cnt=0;
-
-         tmp=ternary;
-         while(tmp)
-         {
-            if(tmp%10==2) {cnt=1;break;}
-            tmp/=10;
-         }
-
-       if(!cnt) ter[i]=1;///if the num has no 2 in the ternary form then corresponding value save as 1;
-   }
-
-  // for(int i=1;i<=10;i++) cout<<ter[i]<<" ";
-}
-
-void Solve(int pos)
-{
-    for(int i=pos;i<=2*pos;i++)
+    while(tmp)
     {
-       if(ter[i]) {cout<<i<<endl;break;}
+       cnt++;
+       tmp/=3;
+       res+= pow(3,cnt);
+       vec.push_back(pow(3,cnt));
     }
 
+    res+=pow(3,cnt+1);
+    vec.push_back(pow(3,cnt+1));
+
+    int len=vec.size();
+
+    for(int i=len-1;i>=0;i--)
+    {
+       if(res-vec[i]>=num)
+       {
+          res-=vec[i];
+       }
+    }
+    cout<<res<<endl;
 }
 
 int main()
@@ -56,9 +43,8 @@ int main()
 	cerr.tie(NULL);
 
 
-	int n,q,tmp;
-
-	Conversion();
+	int q,tmp;
+	ll n;
 
 	cin>>q;
 
@@ -71,4 +57,3 @@ int main()
 
     return 0;
   }
-
