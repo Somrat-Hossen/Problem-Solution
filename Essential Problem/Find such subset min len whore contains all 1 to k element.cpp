@@ -42,11 +42,12 @@ int main()
             int siz=dq.size();
             minlen=min(siz,minlen);
             vis[tmp]--;
-            dq.pop_front();
-            if(vis[tmp]==0 and (tmp>=1 && tmp<=k) ) cnt--;
+            dq.pop_front();///remove from the left side of the dequeue
+            if(vis[tmp]==0 and (tmp>=1 && tmp<=k) ) cnt--; ///greater than k is not valid
          }
       }
    }
+   ///if the minlen not changed from his initial value then not possible
    cout<<"Min length is :"<<minlen<<endl;
 
 
